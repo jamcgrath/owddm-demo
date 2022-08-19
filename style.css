@@ -1,0 +1,85 @@
+:root {
+	--color-osaka: hsla(359, 85%, 53%, 1);
+	--color-kyoto: hsla(284, 61%, 26%, 1);
+	--color-white: #fff;
+	--color-black: hsla(0, 0%, 0%, 1);
+	--color-blue: hsla(230, 100%, 61%, 1);
+
+	--fs-1: 33px;
+	--fs-2: 26px;
+	--fs-3: 22px;
+	--fs-4: 18px;
+	--fs-5: 16px;
+	--fs-6: 15px;
+	--fs-7: 14px;
+	--fs-8: 13px;
+}
+
+/* http://brenna.github.io/csshexagon/ */
+.hexagon {
+	--_hex-bg: var(--hex-bg, currentcolor);
+	--_hex-width: var(--hex-width, 100px);
+	--_hex-height: calc(var(--_hex-width) / 2 * 1.1538);
+	--_hex-margin: calc(var(--_hex-height) / 2);
+	--_hex-inline-border: calc(var(--_hex-width) / 2) solid transparent;
+	--_hex-block-border: var(--_hex-margin) solid var(--_hex-bg);
+
+	position: relative;
+	width: var(--_hex-width);
+	height: var(--_hex-height);
+	background-color: var(--_hex-bg);
+	margin: var(--_hex-margin) 0;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.hexagon:before,
+.hexagon:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: var(--_hex-inline-border);
+	border-right: var(--_hex-inline-border);
+}
+
+.hexagon:before {
+	bottom: 100%;
+	border-bottom: var(--_hex-block-border);
+}
+
+.hexagon:after {
+	top: 100%;
+	width: 0;
+	border-top: var(--_hex-block-border);
+}
+
+.hexagon svg {
+	width: 58%;
+}
+
+.banner {
+	display: flex;
+	align-items: center;
+}
+
+@supports selector(:has(p)) {
+	.banner-osaka:has(.hexagon) {
+		--hex-bg: var(--color-osaka);
+		--hex-width: 156px;
+	}
+	.banner-kyoto:has(.hexagon) {
+		--hex-bg: var(--color-kyoto);
+		--hex-width: 156px;
+	}
+}
+@supports not selector(:has(p)) {
+	.banner-osaka .hexagon {
+		--hex-bg: var(--color-osaka);
+		--hex-width: 156px;
+	}
+	.banner-kyoto .hexagon {
+		--hex-bg: var(--color-kyoto);
+		--hex-width: 156px;
+	}
+}
