@@ -5,6 +5,7 @@
 	--color-black: hsla(0, 0%, 0%, 1);
 	--color-blue: hsla(230, 100%, 61%, 1);
 	--color-gray: #C7C7C7;
+	--color-gold: hsla(36, 19%, 44%, 1);
 
 	--border: 1px solid var(--color-gray);
 	--title-underline:3px solid var(--color-black);
@@ -15,7 +16,7 @@
 	--fs-4: 18px;
 	--fs-5: 16px;
 	--fs-6: 14px;
-	--fs-7: 12px;
+	--fs-7: 13px;
 
 	--custom-font: "norwesterregular", sans-serif;
 	--body-font: "Inter", sans-serif;
@@ -324,6 +325,9 @@ main {
   grid-template-columns: 171px auto;
   column-gap: 18px;
 	padding-bottom: 28px;
+	font-size: var(--fs-4);
+	font-weight: 700;
+	position: relative;
 }
 .event-image {
 	width: 171px;
@@ -351,7 +355,24 @@ main {
 [data-meetup="kyoto"] .event-image:before {
 	--bg-color:  var(--color-kyoto);
 }
-
+.event-time {
+	display: block;
+	color: var(--color-gold);
+	font-size: var(--fs-6);
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.event-link {
+	display: block;
+	font-weight: 400;
+	margin-top: 10px;
+	font-size: var(--fs-7);
+}
+.event-link:after {
+	content: '';
+	position: absolute;
+	inset: 0;
+}
  footer {
 	margin-top: 87px;
 }
