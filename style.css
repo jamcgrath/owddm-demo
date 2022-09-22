@@ -207,25 +207,13 @@ main {
 	margin-top: 20px;
 }
 
-@supports selector(:has(p)) {
-	.banner-osaka:has(.hexagon) {
-		--hex-bg: var(--color-osaka);
-		--hex-width: 156px;
-	}
-	.banner-kyoto:has(.hexagon) {
-		--hex-bg: var(--color-kyoto);
-		--hex-width: 156px;
-	}
+.banner-osaka .hexagon {
+	--hex-bg: var(--color-osaka);
+	--hex-width: 156px;
 }
-@supports not selector(:has(p)) {
-	.banner-osaka .hexagon {
-		--hex-bg: var(--color-osaka);
-		--hex-width: 156px;
-	}
-	.banner-kyoto .hexagon {
-		--hex-bg: var(--color-kyoto);
-		--hex-width: 156px;
-	}
+.banner-kyoto .hexagon {
+	--hex-bg: var(--color-kyoto);
+	--hex-width: 156px;
 }
 
 .info-list {
